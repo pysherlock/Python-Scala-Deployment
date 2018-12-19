@@ -11,12 +11,11 @@ Rotating log files is important for several reasons. First, you probably don't w
 Here is one example with comments:
 ```
 /data/db/kafka.log {
-        daily 	          			#  Rotate logs once per day
-        missingok      				#  It's OK if no *.log files are found
-        rotate 90					#  Keep 90 files before deleting older logs files
-        compress					#  Compress (gzip) log files
-        copytruncate				
-		#  Truncate the original log file in place after creating a copy, instead of moving the old log file and optionally creating a new one
+        daily 	          	#  Rotate logs once per day
+        missingok      		#  It's OK if no *.log files are found
+        rotate 90		#  Keep 90 files before deleting older logs files
+        compress		#  Compress (gzip) log files
+        copytruncate		#  Truncate the original log file in place after creating a copy, instead of moving the old log file and optionally creating a new one
 		#  First copy, then truncate. 
 		#  Please note also that copyrotate has an inherent race condition, 
     #  in that it's possible that the writer will append a line to the logfile just after logrotate finished the copy and before it has issued the truncate operation.
