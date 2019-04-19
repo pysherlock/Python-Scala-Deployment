@@ -8,7 +8,7 @@
 
   Bundle: bundle.xml + bundle.properties
   Includes a set of coordinators. All of them will use same parameters from bundle.properties except re-defination in coordinator
-  Spec: 
+  Spec: https://oozie.apache.org/docs/3.3.1/BundleFunctionalSpec.html
   
 
   Coordinator: coordinator.xml + coordinator.properties (useless when it is started by bundle)
@@ -17,5 +17,3 @@
   Workflow: workflow.xml + job.properties 
   job.properties would be useless when it is triggered by coordinator (coordinator.properties), or a coordinator triggered by bundle (bundle.properties)
   Spec: https://oozie.apache.org/docs/4.0.1/WorkflowFunctionalSpec.html#a4_Parameterization_of_Workflows
-
-
