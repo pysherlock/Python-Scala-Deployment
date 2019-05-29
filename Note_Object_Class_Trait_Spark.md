@@ -1,4 +1,4 @@
-# Initialization of Object, Class, and Traid in Spark
+# Initialization of Object, Class, and Trait in Spark
 
 ## 1. Object
 
