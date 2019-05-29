@@ -12,8 +12,9 @@ For examples:
 
 When you want to ship something to executors, it should be Class rather than Objcet.
 
-Ref: https://docs.scala-lang.org/tour/singleton-objects.html
-     https://stackoverflow.com/questions/47241882/spark-object-singleton-serialization-on-executors
+Ref: 1. https://docs.scala-lang.org/tour/singleton-objects.html 
+     
+     2. https://stackoverflow.com/questions/47241882/spark-object-singleton-serialization-on-executors
 
 ## 2. Trait
 
