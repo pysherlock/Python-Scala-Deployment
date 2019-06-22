@@ -1,5 +1,5 @@
 # Spark Streaming
-
+This document is used for summarize necessary knowledge, possible exceptions, interesting use cases, and how to improve performance of Spark Streaming
 
 ## Stateful Streaming
 
