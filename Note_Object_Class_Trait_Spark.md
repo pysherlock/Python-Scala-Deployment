@@ -29,7 +29,9 @@ As a top-level value, an object is a singleton.
 
 In Spark, Objects, as singletons, **are never shipped to executors**. They are initialized locally, whenever objects is accessed for the first time.
 
-So it means, if you are trying to use a singleton Object in executors (like RDD.map), the executors will try to initialize the object locally. In this case, if this object has some dependecies (like a file to be read) which are only available in driver, the initialization will be falied.
+So it means, if you are trying to use a singleton Object in executors (like RDD.map), the executors will try to initialize the object locally. 
+
+In this case, you can use object (even not serializable) in executors. But be careful, if this object has some dependecies (like a file to be read) which are only available in driver, the initialization will be falied.
 
 For examples:
 
@@ -38,6 +40,8 @@ When you want to ship something to executors, it should be Class rather than Obj
 Ref: 1. https://docs.scala-lang.org/tour/singleton-objects.html 
      
      2. https://stackoverflow.com/questions/47241882/spark-object-singleton-serialization-on-executors
+     
+     3. https://www.nicolaferraro.me/2016/02/22/using-non-serializable-objects-in-apache-spark/
 
 ## 2. Trait
 
@@ -47,3 +51,4 @@ A trait is a kind of class that enables ***multiple inheritance***
 ## 3. Class
 
 The Class which can be shipped to executors has to be Serializable. 
+Otherwise, you need to initialize the class in executors.
